@@ -38,8 +38,11 @@ def validate_analog_input_less():
 
 if __name__ == "__main__":
 
-    validate_analog_input_greater()
+    validate_analog_input_less()
 
     time.sleep(2)
+    
+    validate_analog_input_greater()
 
-    validate_analog_input_less()
+    
+
