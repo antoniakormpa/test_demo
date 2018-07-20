@@ -1,26 +1,23 @@
-# This example will set one of our Testboard's outputs, which has a DAC controller that allows it to output an analog value of anywhere from 0 to 3.3V.
+# This example will send a couple of commands to our device, as we would if we were using our Phone, or our regular Infrastructure during a product's actual usage
 #
-# The goal of this example is to show you how you can drive an analog input on your device from the Testboard. 
+# The goal of this example is to show you how you can send a network command to your devices through the AWS device communication infrastructure.
 #
-# In our particular example, we are only setting a value and not asserting anything. Of course this would never be a real world example, it's only for educational purposes
+# In our particular example, we are only sending a command and not asserting anything. Of course this would never be a real world example, it's only for educational purposes
+
 
 import time
-from Spanner import Spanner
-from Testboard import Testboard
+import Device
 
+IFTTT_KEY = "hgql1kyuQEL-KJfSbP7v0v63TOphPTSLoE5nhxrfFa-"
+device = Device.Ifttt(IFTTT_KEY)
 
-TESTBOARD_ID = "250020001047343438323536"
+def send_network_cmds():
+    # send network command to our device
+    device.sendCommand("turn_on")
 
-testboard = Testboard(TESTBOARD_ID)
+    time.sleep(2)
 
-DAC1 = "A4"
-
-def set_analog_output():
-    # Our Product's Input will be connected the Testboard's Pin A6, which is where the DAC1 output is.
-    # In this example, let's say we want to give out 2V. Our analogWrite value can be from 0 to 4095, which corresponds to a range of 0-3.3V. By doing the calculation (2/3.3*4096), we get a value of about 2482.
-    value = testboard.analogWrite(DAC1, 2482)
-    print(value)
+    device.sendCommand("turn_off")
 
 if __name__ == "__main__":
-
-    set_analog_output()
+	send_network_cmds()
