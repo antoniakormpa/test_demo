@@ -24,13 +24,9 @@ INPUT_PIN = "D7"
 # Our Product's Input will be connected the Testboard's Pin D3, making it our Output Pin
 OUTPUT_PIN = "D3"
 
-
-
 def initialize_switch_off():
     # check PIN state
     switch_status = testboard.digitalRead(INPUT_PIN)
-
-
 
     # If the switch is currently on, toggle the device's button (through our Testboards OUTPUT) 100 miliseconds, simulating a user input.
     if(switch_status == 1):
@@ -42,8 +38,8 @@ def initialize_switch_off():
     switch_status = testboard.digitalRead(INPUT_PIN)
 
     # If the switch is still on, we have some kind of problem so there's no point in running our tests. So we are exiting
-    if(switch_status == 1):
-        return 1
+    #if(switch_status == 1):
+    #    return 1
 
 
 
