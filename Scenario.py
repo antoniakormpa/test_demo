@@ -32,7 +32,7 @@ def validate_analog_input_less():
     # Check PIN state
     # In this example, we use analogReadVoltage() which gives us a Voltage value directly, without having to care about the ADC converter. However, keep in mind that this value could be slightly less accurate, and given that it's a float it's not the best fit for checking Equality. Still, it's good enough for most purposes.
     value = testboard.analogReadVoltage(INPUT_PIN_2)
-
+    print(value)
     spanner.assertLessThan(2.0, value);
     # See also assertLessThanOrEqual()
 
