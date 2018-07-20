@@ -13,7 +13,7 @@ TESTBOARD_ID = "250020001047343438323536"
 
 testboard = Testboard(TESTBOARD_ID)
 
-DAC1 = "A4"
+DAC1 = "A6"
 
 def set_analog_output():
     # Our Product's Input will be connected the Testboard's Pin A6, which is where the DAC1 output is.
