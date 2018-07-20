@@ -11,7 +11,6 @@ from Spanner import Spanner
 from Testboard import Testboard
 
 
-
 TESTBOARD_ID = "250020001047343438323536"
 testboard = Testboard(TESTBOARD_ID)
 
