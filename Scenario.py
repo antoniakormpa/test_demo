@@ -36,7 +36,7 @@ def measure_power_consumption():
     testboard.startPowerMeasurement()
 
     # Measure for 5 minutes
-    time.sleep(5*60)
+    time.sleep(60)
 
     # Stop measuring power consumption
     testboard.stopPowerMeasurement()
