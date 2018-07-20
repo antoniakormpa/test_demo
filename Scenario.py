@@ -14,9 +14,9 @@ TESTBOARD_ID = "250020001047343438323536"
 testboard = Testboard(TESTBOARD_ID)
 
 # Our device's 1st Analog Output Pin will be connected to the Testboard's A0, making it our Input Pin 1
-INPUT_PIN_1 = "A0"
+INPUT_PIN_1 = "A4"
 # Our device's 2nd Analog Output Pin will be connected to the Testboard's A1, making it our Input Pin 2
-INPUT_PIN_2 = "A1"
+INPUT_PIN_2 = "A5"
 
 def validate_analog_input_greater():
     # Check PIN state
