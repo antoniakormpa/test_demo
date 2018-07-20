@@ -4,7 +4,7 @@
 #
 # In our particular example, we are only sending a command and not asserting anything. Of course this would never be a real world example, it's only for educational purposes
 
-
+from Spanner import Spanner
 import time
 import Device
 
