@@ -27,6 +27,7 @@ def test_switch_on_network_cmd():
 
     # check PIN state
     value = testboard.digitalRead(INPUT_PIN)
+    print(value)
     spanner.assertTrue(value)
 
 def test_switch_off_network_cmd():
@@ -36,6 +37,7 @@ def test_switch_off_network_cmd():
 
     # check PIN state
     value = testboard.digitalRead(INPUT_PIN)
+    print(value)
     spanner.assertFalse(value)
 
 
