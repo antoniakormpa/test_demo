@@ -7,7 +7,7 @@ import time
 from Spanner import Spanner
 from Testboard import Testboard
 
-TESTBOARD_ID = "340040000f51353532343635"
+TESTBOARD_ID = "250020001047343438323536"
 testboard = Testboard(TESTBOARD_ID)
 
 # Our Product's Input will be connected the Testboard's Pin D3, making it our Output Pin
