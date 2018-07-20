@@ -1,23 +1,48 @@
-# This example will send a couple of commands to our device, as we would if we were using our Phone, or our regular Infrastructure during a product's actual usage
+# This example will send a couple of commands to our device, which will respond accordingly, to showcase a product's actual usage. 
 #
-# The goal of this example is to show you how you can send a network command to your devices through the AWS device communication infrastructure.
-#
-# In our particular example, we are only sending a command and not asserting anything. Of course this would never be a real world example, it's only for educational purposes
+# In this particular example the device we are testing is a Smart Switch, which responds by toggling one of its pins On of Off based on the command.
 
-from Spanner import Spanner
+# The goal of this example is to show you how you can send a network commands to your devices through the AWS device communication infrastructure, and read a device's output's to verify its response, using our Testboard.
+#
+# This is one real world example of a very simple functional test you would run for your devices.
+
 import time
+from Spanner import Spanner
+from Testboard import Testboard
 import Device
 
 IFTTT_KEY = "hgql1kyuQEL-KJfSbP7v0v63TOphPTSLoE5nhxrfFa-"
 device = Device.Ifttt(IFTTT_KEY)
 
-def send_network_cmds():
+TESTBOARD_ID = "250020001047343438323536"
+testboard = Testboard(TESTBOARD_ID)
+
+# Our device's Output Pin will be connected to the Testboard's D7, making it our Input Pin
+INPUT_PIN = "D7"
+
+def test_switch_on_network_cmd():
     # send network command to our device
     device.sendCommand("turn_on")
+    time.sleep(2)
+
+    # check PIN state
+    value = testboard.digitalRead(INPUT_PIN)
+    spanner.assertTrue(value)
+
+def test_switch_off_network_cmd():
+    # send network command to our device
+    device.sendCommand("turn_off")
+    time.sleep(2)
+
+    # check PIN state
+    value = testboard.digitalRead(INPUT_PIN)
+    spanner.assertFalse(value)
+
+
+if __name__ == "__main__":
+
+    test_switch_on_network_cmd()
 
     time.sleep(2)
 
-    device.sendCommand("turn_off")
-
-if __name__ == "__main__":
-	send_network_cmds()
+    test_switch_off_network_cmd()
