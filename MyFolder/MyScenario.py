@@ -33,7 +33,6 @@ def validate_digital_input_low():
 if __name__ == "__main__":
 
     validate_digital_input_high()
-
     time.sleep(2)
 
     validate_digital_input_low()
