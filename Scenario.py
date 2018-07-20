@@ -29,6 +29,7 @@ def initialize_switch_off():
     switch_status = testboard.digitalRead(INPUT_PIN)
 
     # If the switch is currently on, toggle the device's button (through our Testboards OUTPUT) 100 miliseconds, simulating a user input.
+    print(switch_status)
     if(switch_status == 1):
         testboard.toggle(OUTPUT_PIN, 100)
 
