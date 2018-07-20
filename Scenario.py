@@ -29,7 +29,6 @@ def initialize_switch_off():
     switch_status = testboard.digitalRead(INPUT_PIN)
 
     # If the switch is currently on, toggle the device's button (through our Testboards OUTPUT) 100 miliseconds, simulating a user input.
-    print(switch_status)
     if(switch_status == 1):
         testboard.toggle(OUTPUT_PIN, 100)
 
@@ -52,6 +51,7 @@ def wififoff_toggle_button_toggle_switch():
 
     # check PIN state, make sure it's OFF
     switch_status = testboard.digitalRead(INPUT_PIN)
+    print(switch_status)
     spanner.assertFalse(switch_status)
 
     # Simulate a real-life button press. We toggle the device's button (through our Testboards OUTPUT) 100 miliseconds
@@ -59,6 +59,7 @@ def wififoff_toggle_button_toggle_switch():
 
     # check PIN state, make sure it's now ON
     switch_status = testboard.digitalRead(INPUT_PIN)
+    print(switch_status)
     spanner.assertTrue(switch_status)
 
     # Simulate a real-life button press. We toggle the device's button (through our Testboards OUTPUT) 100 miliseconds
@@ -66,6 +67,7 @@ def wififoff_toggle_button_toggle_switch():
 
     # check PIN state, make sure it's now OFF again
     switch_status = testboard.digitalRead(INPUT_PIN)
+    print(switch_status)
     spanner.assertFalse(switch_status)
 
 
