@@ -38,8 +38,8 @@ def initialize_switch_off():
     switch_status = testboard.digitalRead(INPUT_PIN)
 
     # If the switch is still on, we have some kind of problem so there's no point in running our tests. So we are exiting
-    #if(switch_status == 1):
-    #    return 1
+    if(switch_status == 1):
+        return 1
 
 
 
