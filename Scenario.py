@@ -52,7 +52,7 @@ def wififoff_toggle_button_toggle_switch():
     # check PIN state, make sure it's OFF
     switch_status = testboard.digitalRead(INPUT_PIN)
     print(switch_status)
-    spanner.assertFalse(switch_status)
+    spanner.assertTrue(switch_status)
 
     # Simulate a real-life button press. We toggle the device's button (through our Testboards OUTPUT) 100 miliseconds
     testboard.toggle(OUTPUT_PIN, 100)
