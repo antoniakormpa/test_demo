@@ -22,6 +22,7 @@ def validate_analog_input_greater():
     # Check PIN state
     # analogRead will give us a value between 0 to 4095, corresponding to a 0-3V3 range.
     value = testboard.analogRead(INPUT_PIN_1)
+    print(value)
 
     # Let's say we want to to make sure the voltage is greater than 1.5V. Given the mapping of 0-3.3V to a value of 0-4096, that means the value we have should be higher than aproximately 1861. For the sake of simplicity and because of possible fluctuations in the values, we'll test with 1800, which is aprox. 1.45V.
     # NOTICE: We could also have used analogReadVoltage() as we do in the next example.
