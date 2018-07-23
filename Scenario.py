@@ -16,7 +16,7 @@ TESTBOARD_ID = "250020001047343438323536"
 testboard = Testboard(TESTBOARD_ID)
 
 # Our Testboard's D3 Pin is connected to a power switching circuit that controls the power going to the device. When we toggle it HIGH, the device will be powered, when LOW, the device will shut down
-OUTPUT_PIN = "D3"
+OUTPUT_PIN = "D7"
 
 def measure_power_consumption():
 
