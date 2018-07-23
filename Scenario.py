@@ -30,7 +30,7 @@ def measure_power_consumption():
     testboard.digitalWrite(OUTPUT_PIN, "HIGH");
 
     # The device runs some initialization actions in the beginning, which are not indicative of the true power consumption. Therefore we wait for a while for the initial conditions to pass
-    time.sleep(90)
+    time.sleep(30)
 
     # Start measuring power consumption
     testboard.startPowerMeasurement()
